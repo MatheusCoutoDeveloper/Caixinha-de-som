@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CAIXA DE SOM BLUETOOTH PORTÁTIL</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        z-index: 0;
+      }
+      html,
+      body {
+        height: 100%;
+        background: #fff;
+        font-family: Lato;
+      }
+      .center{
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2%;
+      }
+      .clear{
+        clear: both;
+      }
+      .barra{
+        width: 40px;
+        height: 4px;
+        background: #FE8856;
+      }
+      /*
+            Header
+      */
+
+      #HEADER{
+        margin: 0;
+        text-align: center;
+        font-style: normal;
+      }
+      #HEADER .banner-caixinha1{
+        margin: 0;
+        width: 100%;
+        height: 590px;
+        background: url(img/banner.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      #HEADER .info-header {
+        margin-top: -600px;
+        margin-left: 20%;
+        position: absolute;
+      }
+      #HEADER .logo{
+        text-align: left;
+        margin-bottom: 120px;
+      }
+      #HEADER h3{
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+      }
+      #HEADER h1{
+        font-weight: bold;
+        font-size: 110px;
+        line-height: 132px;
+        -webkit-text-stroke-width: 3px; /* largura da borda */
+        -webkit-text-stroke-color: #74D268; /* cor da borda */
+        color: #ffffff00;
+      }
+      #HEADER h4{
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.5em;
+        color: #FFFFFF;
+        text-transform: uppercase;
+      }
+      #HEADER button{
+        background: linear-gradient(270deg, #6CEE5B 0%, #094E00 100%);
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+        color: #FFFFFF;
+        padding: 13px 40px;
+        border: 0;
+      }
+      /*
+            VÍDEO
+      */
+
+      #VIDEO{
+        margin: 0;
+        margin-top: -40px;
+        width: 100%;
+        background: url(img/bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 50px;
+        text-align: center;
+        padding-top: 30px;
+      }
+      #VIDEO .video{
+        align-items: center;
+      }
+      #VIDEO .barra{
+        margin: 0 auto;
+        margin-top: -1px;
+        margin-bottom: 20px;
+      }
+      #VIDEO h3{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 36px;
+        color: #FE8856;
+      }
+      #VIDEO .texto-video{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+      }
+
+      #VIDEO .info-video{
+        max-width:634px;
+        text-align: center;
+      }
+
+      #VIDEO .youtube{
+        max-width: 570px;
+        height: 316px;
+        background-color: rgb(94, 94, 94);
+        margin: 0 auto;
+      }
+      /*
+            DESCRIÇÃO
+      */
+
+      #DESCRICAO{
+        width: 90%;
+        min-height: 502px;
+        margin: 10px auto;
+      }
+      #DESCRICAO .imagem{
+        display: block;
+        margin: auto;
+      }
+      #DESCRICAO .imagem .caixa img{
+        width: 100%;
+        height: auto;
+      }
+      #DESCRICAO .vert-align{
+        margin-top: 20%;
+      }
+      #DESCRICAO .exp{
+        text-align: center;
+        margin: 70px 0;
+      }
+      #DESCRICAO .exp .imagem-laranja {
+        width: 20%;
+        text-align: center;
+        vertical-align: middle;
+      }
+      #DESCRICAO .exp .imagem-laranja img{
+        max-height: 59px;
+      }
+      #DESCRICAO .txt-laranja{
+        max-width: 171px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000000;
+      }
+
+      /*
+            CONTEUDO      
+      */
+
+
+      #CONTEUDO{
+        background: url(img/bg_preto.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #F0F0F0;
+      }
+
+      #CONTEUDO .caixa-verde img{
+        width: 90%;
+        height: auto;
+        vertical-align: middle;
+        margin-left: 80px;
+      }
+      #CONTEUDO .info-conteudo{
+        padding: 50px 20px;
+      }
+
+      #CONTEUDO h4, .barra{
+        display: inline-block;
+        margin-right: 6px;
+      }
+      #CONTEUDO ul{
+        margin-left: 20px;
+        margin-top: 20px;
+        list-style: none;
+      }
+      #CONTEUDO ul li{
+        margin-bottom: 15px;
+        margin-left: -20px;
+      }
+
+      #CONTEUDO ul li:before {
+        content: '\2022';
+        margin: 0 2px;
+        margin-right: 10px;
+        color: #74D268; /* cor da bolinha */
+      }
+      /*
+            PREÇO
+      */
+
+      #PRECO .row{
+        margin: 125px 10%;
+      }
+      #PRECO .imagem-waves .caixa-preco img{
+        width: 100%;
+        height: auto;
+        margin-top: 35px;
+      }
+      #PRECO .row h3{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+        text-transform: uppercase;
+      }
+      #PRECO  .row .txt-esp{
+        font-family: Roboto;
+        margin-top: 37px;
+        margin-bottom: 14px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: #FE8856;
+      }
+
+      #PRECO .row .txt-desc{
+        max-width: 327px;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 21px;
+        color: #000000;
+        margin-bottom: 30px;
+      }
+      #PRECO .b-orange{
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+      }
+      #PRECO .cor1{
+        width: 80%;
+        height: 80%;
+        background: #FE8856;
+        border-radius: 20px;
+        margin: 1.7px auto;
+      }
+      #PRECO .b-green{
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+      }
+      #PRECO .cor2{
+        width: 80%;
+        height: 80%;
+        background: #6FCB60;
+        border-radius: 20px;
+        margin: 1.7px auto;
+      }
+      #PRECO .texto-preco .txt-de{
+        width: 114.63px;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        color: #C2B7B2;
+        position: relative;
+      }
+      #PRECO .texto-preco .txt-de:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 45%;
+        right: 0;
+        border-top: 2px solid;
+        border-color: red;
+        -webkit-transform: rotate(10deg);
+        -moz-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+        transform: rotate(10deg);
+      }
+      #PRECO .texto-preco .txt-por{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #FE8856;
+      }
+      #PRECO .texto-preco .txt-por strong{
+        font-size: 40px;
+      }
+      #PRECO .btn-comprar{
+        margin: 10px auto;
+        margin-bottom: 10px;
+      }
+      #PRECO .btn-comprar button{
+        width: 300px;
+        height: 57px;
+        background: linear-gradient(270deg, #6CEE5B 0%, #094E00 100%);
+        border-radius: 50px;
+        border: 0;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+        color: #FFFFFF;
+      }
+
+      /*
+            FEEDBACK
+      */
+
+      #FEEDBACK{
+        width: 100%;
+        background: url(img/textura.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 30px;
+        text-align: center;
+      }
+      #FEEDBACK h3{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+        color: #FFFFFF;
+        margin-top: 50px;
+        text-align: center;
+      }
+      #FEEDBACK .barra{
+        margin: 0 48.5%;
+        margin-top: 4px;
+        margin-bottom: 20px;
+      }
+
+      #FEEDBACK .box{
+        margin-bottom: 25px;
+      }
+      #FEEDBACK .med1{
+        margin-top: 21px;
+        width: 290px;
+        height: 345px;
+        filter: drop-shadow(0px 0px 10px rgba(108, 238, 91, 0.7));
+        margin-bottom: 30px;
+      }
+      #FEEDBACK .med2{
+        margin-top: 36px;
+        width: 291px;
+        height: 374px;
+        filter: drop-shadow(0px 0px 10px rgba(108, 238, 91, 0.7));
+        margin-bottom: 30px;
+      }
+      #FEEDBACK .big{
+        width: 288px;
+        height: 366px;
+        filter: drop-shadow(0px 0px 10px rgba(108, 238, 91, 0.7));
+        margin-bottom: 30px;
+      }
+
+      /*
+            FAQ
+      */
+
+      #FAQ{
+        margin: 110px 15%;
+        width: 70%;
+        text-align: center;
+      }
+      #FAQ h3{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 30px;
+        color: #000000;
+      }
+      #FAQ .barra{
+        margin: 0 auto;
+        margin-top: -1px;
+        margin-bottom: 20px;
+      }
+
+      #FAQ .box{
+        width: 100%;
+        min-height: 197px;
+        background: #FFFFFF;
+        box-shadow: -4px -4px 4px rgba(254, 136, 86, 0.2), 4px 4px 4px rgba(116, 210, 104, 0.2);
+        border-radius: 5px;
+        margin: 30px 2px;
+      }
+      #FAQ .box h3{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        color: #FE8856;
+      }
+      #FAQ .box .texto-faq{
+        width: 60%;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 23px;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 5%;
+      }
+      #FAQ .box .imagem-faq{
+        width: 25%;
+        display: inline-block;
+        height: 100%;
+        margin-top: 15%;
+      }
+      #FAQ .box .info{
+        width: 65%;
+        height: 90%;
+        margin: 0;
+        font-size: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 10px 0;
+      }
+      #FAQ .box .info .texto-faq{
+        width: 100%;
+      }
+      #FAQ .btn-whats{
+        width: 90%;
+        text-align: center;
+      }
+      #FAQ button{
+        width: 344px;
+        height: 62px;
+        background: linear-gradient(270deg, #47C756 7.12%, #6CEE5B 85.9%);
+        border-radius: 50px;
+        border: 0;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 23px;
+        font-display:initial;
+        color: #FFFFFF;
+
+        position: relative;
+      }
+      #FAQ .whats{
+        margin-left: 340px;
+        margin-top: -75px;
+        position: relative;
+      }
+      
+      /*
+            FOOTER
+      */
+
+      #FOOTER {
+        background: #464646;
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 11px;
+        text-transform: uppercase;
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      
+      @media screen and (max-width: 1261px) {
+        #FAQ .ad{
+          height: 250px;
+          padding: 0px 5px;
+        }
+      }
+      @media screen and (max-width: 988px){
+        .vert-align{
+          margin: 30px 20%;
+          width: 60%;
+          justify-content: center;
+        }
+      }
+      @media screen and (max-width: 772px){
+        #FEEDBACK .box-whats{
+        width: 100%;
+        }
+        #FEEDBACK .med1{
+          width: 100%;
+        }
+        #FEEDBACK .med2{
+          width: 100%;
+        }
+        #FEEDBACK .big{
+          width: 100%;
+        }
+      }
+      @media screen and (max-width: 740px){
+        #HEADER .info-header {
+          text-align: center;
+          margin-left: 0;
+        }
+        #HEADER .info-header .logo{
+          margin-left: 20px;
+        }
+        #CONTEUDO .info-conteudo{
+          padding: 0 20%;
+        }
+      }
+      @media screen and (max-width: 650px){
+        #FAQ .btn-whats .whats{
+          margin-left: 320px;
+        }
+      }
+      @media screen and (max-width: 515px){
+        #HEADER .info-header{
+          margin-left: auto;
+        }
+        #HEADER h1{
+          font-size: 78px;
+        }
+        #FAQ .whats img{
+          margin-left: -70px;
+          margin-top: 10px;
+          width: 70px;
+        }
+        #FAQ button{
+          width: 250px;
+          padding: 0 5px;
+          font-size: 16px;
+        }
+        #FAQ .ad{
+          height: auto;
+          padding: 0px 5px;
+        }
+      }
+      @media screen and (max-width: 415px){
+        #FAQ .whats img{
+          margin-left: -130px;
+        }
+        #PRECO .btn-comprar button{
+        width: 100%;
+        padding: 10px;
+        }
+      }
+      @media screen and (max-width: 350px){
+        #HEADER .info-header{
+          margin-left: auto;
+        }
+        #HEADER h1{
+          font-size: 66px;
+        }
+        #FAQ button{
+          width: 180px;
+          padding: 0 5px;
+        }
+        #FAQ .whats img{
+          margin-left: -230px;
+        }
+        #FEEDBACK .med1 img{
+        max-width: 190px;
+        height:auto;
+        }
+        #FEEDBACK .med2 img{
+          max-width: 191px;
+          height: auto;
+        }
+        #FEEDBACK .big img{
+          max-width: 188px;
+          height: auto;
+        }
+        #FEEDBACK .box{
+          max-width: 191px;
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="HEADER">
+      <p class="banner-caixinha1" data-selector="*[data-component=&quot;text&quot;] > *"></p><img src="" alt="" data-selector="img"/></p>
+      <div class="header col-md-6">
+        <div class="info-header">
+          <p class="logo" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/logo.png" data-selector="img" /></p>
+          <h3>CAIXA DE SOM BLUETOOTH PORTÁTIL</3>
+          <h1>CAVEIRA</h1>
+          <h4>Grasep D-d05</h4>
+          <button type="button">COMPRAR AGORA</button>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </section><!--HEADER-->
+
+    <section id="VIDEO">
+      <div class="video center col-md-12">
+          <h3>Um novo jeito de ouvir músicas</h3>
+          <div class="barra"></div>
+          <p class="texto-video" data-selector="*[data-component=&quot;text&quot;] > *">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu velit molestie odio faucibus condimentum eget sed mauris</p>
+          <div class="youtube">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/-Hs43Ivu5Q8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+      </div>
+    </section><!--VIDEO-->
+    <section id="DESCRICAO">
+      <div class="row">
+        <div class="col-md-12 col-lg-3">
+          <div class="vert-align">
+            <div class="row exp seg">
+              <div class="col-4 order-1"><p class="imagem-laranja" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/bluetooth.png" alt="" data-selector="img"></p></div>
+              <div class="col-8 order-2"><p class="txt-laranja text-left" data-selector="*[data-component=&quot;text&quot;] > *">Conexão Bluetooth v.5.0 EDR</p></div>
+            </div>
+            <div class="row exp seg">
+              <div class="col-4 order-1"><p class="imagem-laranja" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/speaker.png" alt="" data-selector="img"></p></div>
+              <div class="col-8 order-2"><p class="txt-laranja text-left" data-selector="*[data-component=&quot;text&quot;] > *">Som HI-FI de alta qualidade</p></div>
+            </div>
+            <div class="row exp seg">
+              <div class="col-4 order-1"><p class="imagem-laranja" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/pc.png" alt="" data-selector="img"></p></div>
+              <div class="col-8 order-2"><p class="txt-laranja text-left" data-selector="*[data-component=&quot;text&quot;] > *">Ideal para Pcs, Smartphones, Tvs, etc</p></div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="imagem col-md-12 col-lg-6">
+          <p class="caixa" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/caixa-waves.png" alt="" data-selector="img"></p>
+        </div>
+
+        <div class="col-md-12 col-lg-3">
+          <div class="vert-align">
+            <div class="row exp seg">
+              <div class="col-4 order-2"><p class="imagem-laranja" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/display.png" alt="" data-selector="img"></p></div>
+              <div class="col-8 order-1"><p class="txt-laranja text-right" data-selector="*[data-component=&quot;text&quot;] > *">Display LED indicador de funções</p></div>
+            </div>
+            <div class="row exp seg">
+              <div class="col-4 order-2"><p class="imagem-laranja" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/microfone.png" alt="" data-selector="img"></p></div>
+              <div class="col-8 order-1"><p class="txt-laranja text-right" data-selector="*[data-component=&quot;text&quot;] > *">Conexão para 2 microfones</p></div>
+            </div>
+            <div class="row exp seg">
+              <div class="col-4 order-2"><p class="imagem-laranja" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/battery.png" alt="" data-selector="img"></p></div>
+              <div class="col-8 order-1"><p class="txt-laranja text-right" data-selector="*[data-component=&quot;text&quot;] > *">Bateria interna de excelente autonomia</p></div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section><!--DESCRICAO-->
+    <section id="CONTEUDO">
+      <div class="row">
+        <div class="caixa col-md-6">
+          <p class="caixa-verde" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/caixa-perspectiva.png" alt="" data-selector="img"></p>
+        </div>
+        <div class="info-conteudo col-md-6">
+          <h4>Conteúdo da Embalagem</h4><div class="barra"></div> 
+          <ul>
+            <li>1 Aparelho receptor de radiodifusão</li>
+            <li>1 Cabo adaptador</li>
+            <li>1 Cabo P2 x P2</li>
+            <li>1 Manual de instruções</li>
+            <li>1 Microfone</li>
+            <li>1 Controle remoto</li>
+          </ul>
+        </div>
+      </div>
+    </section><!--CONTEUDO-->
+    <section id="PRECO">
+      <div class="row">
+        <div class="imagem-waves col-lg-6 col-md-12">
+          <p class="caixa-preco" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/equalizador.png" alt="" data-selector="img"></p>
+        </div>
+        <div class="texto-preco col-lg-6 col-md-12">
+          <h3>Caixa De Som Bluetooth Portátil Caveira Grasep D-d05</h3>
+          <p class="txt-esp" data-selector="*[data-component=&quot;text&quot;] > *">Especificações</p>
+          <p class="txt-desc" data-selector="*[data-component=&quot;text&quot;] > *">
+            Potência: 50W RMS
+            Alimentação: 9 Vdc
+            Capacidade da Bateria Interna: 3600mAh
+            Frequência de resposta: 100~ 15000Hz
+            Impedância: 4 Ohms
+            Sensibilidade: 85dB
+            Diâmetro do alto-falante: 6.5" 2"
+            Dimensões: 400150300mm (CxLxA)
+          </p>
+          <div class="b-orange"><div class="cor1"></div></div>
+          <div class="b-green"><div class="cor2"></div></div>
+          <p class="txt-de" data-selector="*[data-component=&quot;text&quot;] > *">de R$990,00</p>
+          <p class="txt-por" data-selector="*[data-component=&quot;text&quot;] > *">R$ <strong>690,00</strong></p>
+        </div>
+        <div class="btn-comprar row">
+          <button>COMPRAR AGORA</button>
+        </div>
+      </div>
+    </section><!--PRECO-->
+    <section id="FEEDBACK">
+      <h3>Quem já comprou:</h3>
+      <div class="barra"></div>
+      <div class="row center">
+        <div class="box med1 col-lg-4 col-md-12 col-xs-12"><p class="box-whats" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/whats1.png" alt="" data-selector="img"></p></div>
+        <div class="box big col-lg-4 col-md-12 col-xs-12"><p class="box-whats" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/whats2.png" alt="" data-selector="img"></p></div>
+        <div class="box med2 col-lg-4 col-md-12 col-xs-12"><p class="box-whats" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/whats3.png" alt="" data-selector="img"></p></div>
+      </div>
+    </section><!--FEEDBACK-->
+    <section id="FAQ">
+      <h3>Não está acostumado a comprar pela internet?</h3>
+      <div class="barra"></div>
+      <div class="row">
+          <div class="vert col-lg-6 col-md-12">
+            <div class="box ad">
+              <p class="imagem-faq" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/entrega.png" alt="" data-selector="img"></p>
+              <div class="info">
+                <h3>Qual prazo de entrega?</h3>
+                <p class="texto-faq" data-selector="*[data-component=&quot;text&quot;] > *">O prazo varia de acordo com cada estado, mas geralmente em até 15 dias úteis. Você recebe o código de rastreio dos correios por email para acompanhar sua compra.</p>
+              </div>
+            </div>
+            <div class="box">
+              <p class="imagem-faq" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/cofre.png" alt="" data-selector="img"></p>
+              <p class="texto-faq" data-selector="*[data-component=&quot;text&quot;] > *">Os seus dados são pessoais, sigilosos e não são compartilhados</p>
+            </div>
+            <div class="box">
+              <p class="imagem-faq" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/shield.png" alt="" data-selector="img"></p>
+              <p class="texto-faq" data-selector="*[data-component=&quot;text&quot;] > *">Site 100% confiável e autenticado por empresas de segurança</p>
+            </div>
+          </div>
+          <div class="vert col-lg-6 col-md-12">
+            <div class="box ad">
+              <p class="imagem-faq" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/location-pin.png" alt="" data-selector="img"></p>
+              <div class="info">
+                <h3>Onde fica a empresa?</h3>
+                <p class="texto-faq" data-selector="*[data-component=&quot;text&quot;] > *">Somos uma loja física localizada na Av. Getúlio Vargas, 547 no centro de Tobias Barreto em Sergipe.</p>
+              </div>
+            </div>
+            <div class="box">
+              <p class="imagem-faq" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/cadeado.png" alt="" data-selector="img"></p>
+              <p class="texto-faq" data-selector="*[data-component=&quot;text&quot;] > *">Seus dados financeiros permanecem secretos e protegidos</p>
+            </div>
+            <div class="box">
+              <p class="imagem-faq" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/entrega.png" alt="" data-selector="img"></p>
+              <p class="texto-faq" data-selector="*[data-component=&quot;text&quot;] > *">Entrega garantida no prazo combinado e política de devolução</p>
+            </div>
+          </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="btn-whats col-md-12">
+          <button>Conversar no Whatsapp</button>
+          <p class="whats" data-selector="*[data-component=&quot;text&quot;] > *"><img src="img/icon_whats.png" alt="" data-selector="img"></p>
+        </div>
+      </div>
+    </section><!--FAQ-->
+    <section id="FOOTER">START PLAY - Todos os direitos reservados</section><!--FOOTER-->
+  </body>
+</html>
